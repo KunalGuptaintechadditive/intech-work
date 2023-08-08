@@ -841,9 +841,9 @@ int main()
 			std::vector<double> cord = bmap[j].second;
 			// 1 cond stop reached 2 cond outside oct excempt when j=vid p oct
 		
-			if (bmap[j].first == 'I' || bmap[j].first == '	P')  {
+			if (bmap[j].first == 'I' || bmap[j].first == 'P'){
 				cout << "loop started" << endl;
-				double c[3] = { cord[0],cord[1],cord[2] };
+				double c[3] = {cord[0],cord[1],cord[2] };
 				int v = leftvoxel(j, c, voxelsize).voxelId;
 				char pos = bmap[v].first;
 				if (v != -100 && (pos == 'O')) {
@@ -852,7 +852,6 @@ int main()
 				}
 				else {
 					v = rightvoxel(j, c, voxelsize).voxelId;
-					//v2 = position(c, v, voxelsize, shape);
 					pos = bmap[v].first;
 					if (v != 100 && (pos == 'O')) j = v;
 					else {
@@ -864,7 +863,7 @@ int main()
 							pos = bmap[v].first;
 							if (v != 100 && (pos == 'O')) j = v;
 						}
-					}
+					}   
 				}                   
 			} 
 
@@ -920,8 +919,8 @@ int main()
 	auto execution_time = std::chrono::duration_cast<std::chrono::milliseconds>(end_time - start_time).count();
 	std::cout << "Execution time: " << execution_time << " milliseconds" << std::endl;
 
-	cout << "vxoelsizdfsfds" << "voxelsize" << endl;
-	cout << "totalchildddddddddddddddddddddddddddddddd === ==== === " << totalchlild << endl;
+	/*cout << "vxoelsizdfsfds" << "voxelsize" << endl;
+	cout << "totalchildddddddddddddddddddddddddddddddd === ==== === " << totalchlild << endl;*/
 	//drawing 60th voxel
 	/*linepoints->InsertNextPoint(1.5, 0.5, 3.5);
 	linepoints->InsertNextPoint(1.5, 1.5, 3.5);
@@ -947,7 +946,7 @@ int main()
 	renderer->AddActor(lineactor4);*/
 	renderer->SetBackground(colors->GetColor3d("white").GetData());
 	//previous midnight blue
-//
+
 
 	// Render an image (lights and cameras are created automatically)
 	renderWindow->SetWindowName("OctreeVisualize");
