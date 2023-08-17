@@ -608,6 +608,7 @@ int main()
 	// "D:\\DOWNLOADS\\Modular_Bar_and_Snap_Covid_Mask_Ear_Saver_4569503\\files\\14pbar_03.stl"
 	// 
 	// Read the STL file
+
 	vtkNew<vtkSTLReader> reader;
 	reader->SetFileName(stl_file.c_str());
 	reader->Update();
